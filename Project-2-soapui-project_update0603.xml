@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="fd23c687-97c4-45eb-9590-63da09ac2d05" activeEnvironment="Default" name="Project 2" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9709bfeb-8030-445d-b569-ee8d85c7de32" wsaVersion="NONE" name="ZWAPP_VALIDATE_APS_RFCODE" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_VALIDATE_APS_RFCODE" soapVersion="1_1" anonymous="optional" definition="https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fsapr3q.dei.local%3A8002%2Fsap%2Fbc%2Fsrt%2Fwsdl%2Fbndg_615DDCC7A87C2080E10080190A0A3965%2Fwsdl11%2Fallinone%2Fws_policy%2Fdocument%3Fsap-client%3D100&amp;data=04%7C01%7CP.Doulgeridis%40dei.gr%7C3c5c85a6954c49a3e01a08d98a4fe4c9%7Cce73e05e1b4e4df3b69c705b18aaeefe%7C1%7C0%7C637692898035896783%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=FJw9qD49cxqCpVlWgDKpTlmlzUdFK2TiH5%2BvKkDQA8c%3D&amp;reserved=0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fsapr3q.dei.local%3A8002%2Fsap%2Fbc%2Fsrt%2Fwsdl%2Fbndg_615DDCC7A87C2080E10080190A0A3965%2Fwsdl11%2Fallinone%2Fws_policy%2Fdocument%3Fsap-client%3D100&amp;data=04%7C01%7CP.Doulgeridis%40dei.gr%7C3c5c85a6954c49a3e01a08d98a4fe4c9%7Cce73e05e1b4e4df3b69c705b18aaeefe%7C1%7C0%7C637692898035896783%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=FJw9qD49cxqCpVlWgDKpTlmlzUdFK2TiH5%2BvKkDQA8c%3D&amp;reserved=0"><con:part><con:url>https://eur02.safelinks.protection.outlook.com/?url=http%3A%2F%2Fsapr3q.dei.local%3A8002%2Fsap%2Fbc%2Fsrt%2Fwsdl%2Fbndg_615DDCC7A87C2080E10080190A0A3965%2Fwsdl11%2Fallinone%2Fws_policy%2Fdocument%3Fsap-client%3D100&amp;data=04%7C01%7CP.Doulgeridis%40dei.gr%7C3c5c85a6954c49a3e01a08d98a4fe4c9%7Cce73e05e1b4e4df3b69c705b18aaeefe%7C1%7C0%7C637692898035896783%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=FJw9qD49cxqCpVlWgDKpTlmlzUdFK2TiH5%2BvKkDQA8c%3D&amp;reserved=0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_VALIDATE_APS_RFCODE">
+    <wsaw:UsingAddressing xmlns:wsaw="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_VALIDATE_APS_RFCODE">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZWappValidateApsRf">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char25">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="25"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char70">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="70"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:complexType name="ZwappStrAddressData">
+        <xsd:sequence>
+          <xsd:element name="AddressType" type="n0:char10"/>
+          <xsd:element name="AddressStreet" type="n0:char60"/>
+          <xsd:element name="AddressNumber" type="n0:char10"/>
+          <xsd:element name="AddressCity" type="n0:char40"/>
+          <xsd:element name="AddressPc" type="n0:char10"/>
+          <xsd:element name="AddressPoBox" type="n0:char10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZWappValidateApsRf">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="InitMode" type="n0:char1"/>
+            <xsd:element name="RfCode" type="n0:char25"/>
+            <xsd:element name="Source" type="n0:char20" minOccurs="0"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZWappValidateApsRfResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Address" type="tns:ZwappStrAddressData"/>
+            <xsd:element name="Name" type="n0:char40"/>
+            <xsd:element name="ResultCode" type="n0:char4"/>
+            <xsd:element name="ResultMessage" type="n0:char70"/>
+            <xsd:element name="Surname" type="n0:char40"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZWappValidateApsRf">
+    <wsdl:part name="parameters" element="tns:ZWappValidateApsRf"/>
+  </wsdl:message>
+  <wsdl:message name="ZWappValidateApsRfResponse">
+    <wsdl:part name="parameter" element="tns:ZWappValidateApsRfResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_VALIDATE_APS_RFCODE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_VALIDATE_APS_RFCODE"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZWappValidateApsRf">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZWappValidateApsRf"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZWappValidateApsRf"/>
+      <wsdl:output message="tns:ZWappValidateApsRfResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_VALIDATE_APS_RFCODE" type="tns:ZWAPP_VALIDATE_APS_RFCODE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_VALIDATE_APS_RFCODE"/>
+    </wsp:Policy>
+    <wsa:EndpointReference xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <wsa:ReferenceParameters/>
+    </wsa:EndpointReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZWappValidateApsRf">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_VALIDATE_APS_RFCODE">
+    <wsdl:port name="ZWAPP_VALIDATE_APS_RFCODE" binding="tns:ZWAPP_VALIDATE_APS_RFCODE">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_validate_aps_rfcode/100/zwapp_validate_aps_rfcode/zwapp_validate_aps_rfcode"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_validate_aps_rfcode/100/zwapp_validate_aps_rfcode/zwapp_validate_aps_rfcode</con:endpoint></con:endpoints><con:operation id="fdf712e3-c722-458f-9ea2-92c6dab72a32" isOneWay="false" action="" name="ZWappValidateApsRf" bindingOperationName="ZWappValidateApsRf" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="509d837b-bc05-4dac-9c68-5fd7837e3ed8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_validate_aps_rfcode/100/zwapp_validate_aps_rfcode/zwapp_validate_aps_rfcode</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZWappValidateApsRf>\r
+         <InitMode>1</InitMode>\r
+         <RfCode>RF39907738000300002090038</RfCode>\r
+         <!--Optional:-->\r
+         <Source>?</Source>\r
+      </urn:ZWappValidateApsRf>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>webapp</con:username><con:password>asd234</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_VALIDATE_APS_RFCODE/ZWappValidateApsRfRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="e49f6a9c-be43-4b32-9cae-fc4ff278dfa1" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webdispatcher.dei.local:44398/sap/bc/srt/rfc/sap/zwapp_validate_aps_rfcode/100/zwapp_validate_aps_rfcode/zwapp_validate_aps_rfcode</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZWappValidateApsRf>\r
+         <InitMode>1</InitMode>\r
+         <RfCode>RF39907738000300002090038</RfCode>\r
+         <!--Optional:-->\r
+         <Source>?</Source>\r
+      </urn:ZWappValidateApsRf>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>WEBAPP</con:username><con:password>Web@pp123</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_VALIDATE_APS_RFCODE/ZWappValidateApsRfRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

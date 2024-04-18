@@ -1,0 +1,2737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b9010598-fa85-44e3-bb17-0a02c210aeb0" activeEnvironment="Default" name="ws-testing for CRM" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="48405f35-15aa-426b-a665-ef31235ee860" wsaVersion="NONE" name="ZWAPP_SF_CREATE_BP" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_CREATE_BP" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6393150D1E382B00E100808A0A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6393150D1E382B00E100808A0A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6393150D1E382B00E100808A0A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_CREATE_BP">
+    <wsaw:UsingAddressing xmlns:wsaw="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_CREATE_BP">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfCreateBpExternal">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char241">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="241"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfBpInputData">
+        <xsd:sequence>
+          <xsd:element name="Title" type="n0:char4"/>
+          <xsd:element name="Name" type="n0:char40"/>
+          <xsd:element name="Surname" type="n0:char40"/>
+          <xsd:element name="FatherName" type="n0:char40"/>
+          <xsd:element name="BpCategory" type="n0:char1"/>
+          <xsd:element name="Street" type="n0:char60"/>
+          <xsd:element name="StreetNumber" type="n0:char10"/>
+          <xsd:element name="PostalCode" type="n0:char10"/>
+          <xsd:element name="City" type="n0:char40"/>
+          <xsd:element name="Region" type="n0:char3"/>
+          <xsd:element name="Country" type="n0:char3"/>
+          <xsd:element name="TaxNumber" type="n0:char20"/>
+          <xsd:element name="Doy" type="n0:char4"/>
+          <xsd:element name="IdType" type="n0:char6"/>
+          <xsd:element name="IdNumber" type="n0:char60"/>
+          <xsd:element name="LegalForm" type="n0:char2"/>
+          <xsd:element name="BpContactPerson" type="n0:char10"/>
+          <xsd:element name="BpExternalId" type="n0:char20"/>
+          <xsd:element name="Email" type="n0:char241"/>
+          <xsd:element name="HomePhone" type="n0:char30"/>
+          <xsd:element name="Mobile" type="n0:char30"/>
+          <xsd:element name="CompanyName" type="n0:char40"/>
+          <xsd:element name="CompanyPersonName" type="n0:char40"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="tns:char36"/>
+          <xsd:element name="CorrelationId" type="tns:char36"/>
+          <xsd:element name="OrderId" type="tns:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfCreateBpExternal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsBpInputData" type="tns:ZsfBpInputData"/>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfCreateBpExternalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EvErrorDescription" type="n0:char255"/>
+            <xsd:element name="EvIdocNumber" type="n0:char16"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfCreateBpExternal">
+    <wsdl:part name="parameters" element="tns:ZsfCreateBpExternal"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfCreateBpExternalResponse">
+    <wsdl:part name="parameter" element="tns:ZsfCreateBpExternalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_CREATE_BP">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_CREATE_BP"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfCreateBpExternal">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfCreateBpExternal"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfCreateBpExternal"/>
+      <wsdl:output message="tns:ZsfCreateBpExternalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_CREATE_BP" type="tns:ZWAPP_SF_CREATE_BP">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_CREATE_BP"/>
+    </wsp:Policy>
+    <wsa:EndpointReference xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <wsa:ReferenceParameters/>
+    </wsa:EndpointReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfCreateBpExternal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_CREATE_BP">
+    <wsdl:port name="ZWAPP_SF_CREATE_BP" binding="tns:ZWAPP_SF_CREATE_BP">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_bp/100/zwapp_sf_create_bp/zwapp_sf_create_bp"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_bp/100/zwapp_sf_create_bp/zwapp_sf_create_bp</con:endpoint></con:endpoints><con:operation id="53b33bfc-777b-4523-8656-0ea5fe9d31fc" isOneWay="false" action="" name="ZsfCreateBpExternal" bindingOperationName="ZsfCreateBpExternal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ef363ff3-06b2-4ed2-aa66-234c51fd9834" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_bp/100/zwapp_sf_create_bp/zwapp_sf_create_bp</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfCreateBpExternal>\r
+         <IsBpInputData>\r
+            <Title>?</Title>\r
+            <Name>?</Name>\r
+            <Surname>?</Surname>\r
+            <FatherName>?</FatherName>\r
+            <BpCategory>?</BpCategory>\r
+            <Street>?</Street>\r
+            <StreetNumber>?</StreetNumber>\r
+            <PostalCode>?</PostalCode>\r
+            <City>?</City>\r
+            <Region>?</Region>\r
+            <Country>?</Country>\r
+            <TaxNumber>?</TaxNumber>\r
+            <Doy>?</Doy>\r
+            <IdType>?</IdType>\r
+            <IdNumber>?</IdNumber>\r
+            <LegalForm>?</LegalForm>\r
+            <BpContactPerson>?</BpContactPerson>\r
+            <BpExternalId>?</BpExternalId>\r
+            <Email>?</Email>\r
+            <HomePhone>?</HomePhone>\r
+            <Mobile>?</Mobile>\r
+            <CompanyName>?</CompanyName>\r
+            <CompanyPersonName>?</CompanyPersonName>\r
+         </IsBpInputData>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+      </urn:ZsfCreateBpExternal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_CREATE_BP/ZsfCreateBpExternalRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="c667d6cc-d433-4cf9-b24f-15de1163906e" wsaVersion="NONE" name="ZWAPP_SF_CREATE_CONNOBJ" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_CREATE_CONNOBJ" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63937B8A1E3C1600E10080320A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63937B8A1E3C1600E10080320A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63937B8A1E3C1600E10080320A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_CREATE_CONNOBJ">
+    <wsaw:UsingAddressing xmlns:wsaw="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_CREATE_CONNOBJ">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfCreateConnobjExternal">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfConnobjInputData">
+        <xsd:sequence>
+          <xsd:element name="BusinessPartnerId" type="n0:char10"/>
+          <xsd:element name="PodId" type="n0:char50"/>
+          <xsd:element name="Street" type="n0:char60"/>
+          <xsd:element name="StreetNumber" type="n0:char10"/>
+          <xsd:element name="PostalCode" type="n0:char10"/>
+          <xsd:element name="City" type="n0:char40"/>
+          <xsd:element name="Region" type="n0:char3"/>
+          <xsd:element name="Country" type="n0:char3"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="tns:char36"/>
+          <xsd:element name="CorrelationId" type="tns:char36"/>
+          <xsd:element name="OrderId" type="tns:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfCreateConnobjExternal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsConnobjData" type="tns:ZsfConnobjInputData"/>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfCreateConnobjExternalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EvErrorDescription" type="n0:char255"/>
+            <xsd:element name="EvIdocNumber" type="n0:char16"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfCreateConnobjExternal">
+    <wsdl:part name="parameters" element="tns:ZsfCreateConnobjExternal"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfCreateConnobjExternalResponse">
+    <wsdl:part name="parameter" element="tns:ZsfCreateConnobjExternalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_CREATE_CONNOBJ">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_CREATE_CONNOBJ"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfCreateConnobjExternal">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfCreateConnobjExternal"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfCreateConnobjExternal"/>
+      <wsdl:output message="tns:ZsfCreateConnobjExternalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_CREATE_CONNOBJ" type="tns:ZWAPP_SF_CREATE_CONNOBJ">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_CREATE_CONNOBJ"/>
+    </wsp:Policy>
+    <wsa:EndpointReference xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <wsa:ReferenceParameters/>
+    </wsa:EndpointReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfCreateConnobjExternal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_CREATE_CONNOBJ">
+    <wsdl:port name="ZWAPP_SF_CREATE_CONNOBJ" binding="tns:ZWAPP_SF_CREATE_CONNOBJ">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_connobj/100/zwapp_sf_create_connobj/zwapp_sf_create_connobj"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_connobj/100/zwapp_sf_create_connobj/zwapp_sf_create_connobj</con:endpoint></con:endpoints><con:operation id="32a2e02a-287f-4a31-b299-3b720b4052a6" isOneWay="false" action="" name="ZsfCreateConnobjExternal" bindingOperationName="ZsfCreateConnobjExternal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3bbfc739-33c8-4214-8730-da251b5ccfbd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_connobj/100/zwapp_sf_create_connobj/zwapp_sf_create_connobj</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfCreateConnobjExternal>\r
+         <IsConnobjData>\r
+            <BusinessPartnerId>?</BusinessPartnerId>\r
+            <PodId>?</PodId>\r
+            <Street>?</Street>\r
+            <StreetNumber>?</StreetNumber>\r
+            <PostalCode>?</PostalCode>\r
+            <City>?</City>\r
+            <Region>?</Region>\r
+            <Country>?</Country>\r
+         </IsConnobjData>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+      </urn:ZsfCreateConnobjExternal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_CREATE_CONNOBJ/ZsfCreateConnobjExternalRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="c07b6c28-bd5f-467b-a1f0-b3cfc8a9b9db" wsaVersion="NONE" name="ZWAPP_UPD_CONTRACT_ADDONS_V2" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_UPD_CONTRACT_ADDONS_V2" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_642327C6EFA58640E1008000AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_642327C6EFA58640E1008000AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_642327C6EFA58640E1008000AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_UPD_CONTRACT_ADDONS_V2">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_UPD_CONTRACT_ADDONS_V2">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZwappUpdContractAddonsV2">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char23">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="23"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="n0:char36"/>
+          <xsd:element name="CorrelationId" type="n0:char36"/>
+          <xsd:element name="OrderId" type="n0:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZwebappResult">
+        <xsd:sequence>
+          <xsd:element name="Code" type="n0:char23"/>
+          <xsd:element name="Message" type="n0:char220"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZwebappResults">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZwebappResult" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZwappUpdContractAddonsV2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData" minOccurs="0"/>
+            <xsd:element name="IvAddonId" type="n0:char10"/>
+            <xsd:element name="IvContractAccount" type="n0:char12"/>
+            <xsd:element name="IvDeactivate" type="n0:char1" minOccurs="0"/>
+            <xsd:element name="IvSource" type="n0:char20" minOccurs="0"/>
+            <xsd:element name="IvStartDate" type="n0:date10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZwappUpdContractAddonsV2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EtResults" type="tns:ZwebappResults"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZwappUpdContractAddonsV2">
+    <wsdl:part name="parameters" element="tns:ZwappUpdContractAddonsV2"/>
+  </wsdl:message>
+  <wsdl:message name="ZwappUpdContractAddonsV2Response">
+    <wsdl:part name="parameter" element="tns:ZwappUpdContractAddonsV2Response"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_UPD_CONTRACT_ADDONS_V2">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_UPD_CONTRACT_ADDONS_V2"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZwappUpdContractAddonsV2">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZwappUpdContractAddonsV2"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZwappUpdContractAddonsV2"/>
+      <wsdl:output message="tns:ZwappUpdContractAddonsV2Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_UPD_CONTRACT_ADDONS_V2" type="tns:ZWAPP_UPD_CONTRACT_ADDONS_V2">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_UPD_CONTRACT_ADDONS_V2"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZwappUpdContractAddonsV2">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_UPD_CONTRACT_ADDONS_V2">
+    <wsdl:port name="ZWAPP_UPD_CONTRACT_ADDONS_V2" binding="tns:ZWAPP_UPD_CONTRACT_ADDONS_V2">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_contract_addons_v2/100/zwapp_upd_contract_addons_v2/zwapp_upd_contract_addons_v2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_contract_addons_v2/100/zwapp_upd_contract_addons_v2/zwapp_upd_contract_addons_v2</con:endpoint></con:endpoints><con:operation id="0747a9ee-1cad-4b94-8a27-3b30b5a31ae8" isOneWay="false" action="" name="ZwappUpdContractAddonsV2" bindingOperationName="ZwappUpdContractAddonsV2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="319fd22f-2d47-4f03-bc18-5b8053b43c8f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_contract_addons_v2/100/zwapp_upd_contract_addons_v2/zwapp_upd_contract_addons_v2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZwappUpdContractAddonsV2>\r
+         <!--Optional:-->\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+         <IvAddonId>?</IvAddonId>\r
+         <IvContractAccount>?</IvContractAccount>\r
+         <!--Optional:-->\r
+         <IvDeactivate>?</IvDeactivate>\r
+         <!--Optional:-->\r
+         <IvSource>?</IvSource>\r
+         <IvStartDate>?</IvStartDate>\r
+      </urn:ZwappUpdContractAddonsV2>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_UPD_CONTRACT_ADDONS_V2/ZwappUpdContractAddonsV2Request"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="c117840f-caa7-4419-9202-1029558a2782" wsaVersion="NONE" name="ZWAPP_SF_CREATE_INSTALLATION" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_CREATE_INSTALLATION" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63A3879461B64900E10080160A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63A3879461B64900E10080160A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63A3879461B64900E10080160A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_CREATE_INSTALLATION">
+    <wsaw:UsingAddressing xmlns:wsaw="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_CREATE_INSTALLATION">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfCreateInstalExternal">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char11">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="11"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char132">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="132"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfInstallationInputData">
+        <xsd:sequence>
+          <xsd:element name="BusinessPartnerId" type="n0:char10"/>
+          <xsd:element name="PremiseId" type="n0:char10"/>
+          <xsd:element name="ConnectionObjectId" type="n0:char30"/>
+          <xsd:element name="PodId" type="n0:char50"/>
+          <xsd:element name="Usage" type="n0:char1"/>
+          <xsd:element name="VoltageLevel" type="n0:char2"/>
+          <xsd:element name="ProductId" type="n0:char2"/>
+          <xsd:element name="NightRegister" type="n0:char1"/>
+          <xsd:element name="Industry" type="n0:char10"/>
+          <xsd:element name="InstallationType" type="n0:char4"/>
+          <xsd:element name="PreviousSupplier" type="n0:char20"/>
+          <xsd:element name="MoveInDate" type="n0:char8"/>
+          <xsd:element name="Comments" type="n0:char132"/>
+          <xsd:element name="RequestReason" type="n0:char4"/>
+          <xsd:element name="RequestAmount" type="n0:char11"/>
+          <xsd:element name="ExemptReason" type="n0:char4"/>
+          <xsd:element name="NightMeterReading" type="n0:char8"/>
+          <xsd:element name="DailyMeterReading" type="n0:char8"/>
+          <xsd:element name="MoveType" type="tns:numeric2"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="tns:char36"/>
+          <xsd:element name="CorrelationId" type="tns:char36"/>
+          <xsd:element name="OrderId" type="tns:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfCreateInstalExternal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsInstallationData" type="tns:ZsfInstallationInputData"/>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfCreateInstalExternalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EvErrorDescription" type="n0:char255"/>
+            <xsd:element name="EvIdocNumber" type="n0:char16"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfCreateInstalExternal">
+    <wsdl:part name="parameters" element="tns:ZsfCreateInstalExternal"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfCreateInstalExternalResponse">
+    <wsdl:part name="parameter" element="tns:ZsfCreateInstalExternalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_CREATE_INSTALLATION">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_CREATE_INSTALLATION"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfCreateInstalExternal">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfCreateInstalExternal"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfCreateInstalExternal"/>
+      <wsdl:output message="tns:ZsfCreateInstalExternalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_CREATE_INSTALLATION" type="tns:ZWAPP_SF_CREATE_INSTALLATION">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_CREATE_INSTALLATION"/>
+    </wsp:Policy>
+    <wsa:EndpointReference xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <wsa:ReferenceParameters/>
+    </wsa:EndpointReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfCreateInstalExternal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_CREATE_INSTALLATION">
+    <wsdl:port name="ZWAPP_SF_CREATE_INSTALLATION" binding="tns:ZWAPP_SF_CREATE_INSTALLATION">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_installation/100/zwapp_sf_create_installation/zwapp_sf_create_installation"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_installation/100/zwapp_sf_create_installation/zwapp_sf_create_installation</con:endpoint></con:endpoints><con:operation id="7ec7e4f9-f571-4597-b680-bc6c0c91db43" isOneWay="false" action="" name="ZsfCreateInstalExternal" bindingOperationName="ZsfCreateInstalExternal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4550b6b8-ae3b-4743-9c9f-a7c82541f05d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_installation/100/zwapp_sf_create_installation/zwapp_sf_create_installation</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfCreateInstalExternal>\r
+         <IsInstallationData>\r
+            <BusinessPartnerId>?</BusinessPartnerId>\r
+            <PremiseId>?</PremiseId>\r
+            <ConnectionObjectId>?</ConnectionObjectId>\r
+            <PodId>?</PodId>\r
+            <Usage>?</Usage>\r
+            <VoltageLevel>?</VoltageLevel>\r
+            <ProductId>?</ProductId>\r
+            <NightRegister>?</NightRegister>\r
+            <Industry>?</Industry>\r
+            <InstallationType>?</InstallationType>\r
+            <PreviousSupplier>?</PreviousSupplier>\r
+            <MoveInDate>?</MoveInDate>\r
+            <Comments>?</Comments>\r
+            <RequestReason>?</RequestReason>\r
+            <RequestAmount>?</RequestAmount>\r
+            <ExemptReason>?</ExemptReason>\r
+            <NightMeterReading>?</NightMeterReading>\r
+            <DailyMeterReading>?</DailyMeterReading>\r
+            <MoveType>?</MoveType>\r
+         </IsInstallationData>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+      </urn:ZsfCreateInstalExternal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_CREATE_INSTALLATION/ZsfCreateInstalExternalRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="8cbd2412-7502-4469-8701-24f3ff1e3f1a" wsaVersion="NONE" name="ZWAPP_SF_CREATE_SERVICE_ORDER" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_CREATE_SERVICE_ORDER" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_641DB0415F7A8800E1008030AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_641DB0415F7A8800E1008030AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_641DB0415F7A8800E1008030AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_CREATE_SERVICE_ORDER">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_CREATE_SERVICE_ORDER">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfCreateServiceOrder">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="char11">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="11"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="tns:char36"/>
+          <xsd:element name="CorrelationId" type="tns:char36"/>
+          <xsd:element name="OrderId" type="tns:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfCreateServiceOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="IvContractAccountId" type="n0:char12"/>
+            <xsd:element name="IvRequestAmount" type="tns:char11"/>
+            <xsd:element name="IvRequestReason" type="tns:char4"/>
+            <xsd:element name="IvStandardTextKey" type="n0:char7"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfCreateServiceOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EvOrderNumber" type="tns:char12"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+            <xsd:element name="EvResultMessage" type="n0:char255"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char7">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="7"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfCreateServiceOrder">
+    <wsdl:part name="parameters" element="tns:ZsfCreateServiceOrder"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfCreateServiceOrderResponse">
+    <wsdl:part name="parameter" element="tns:ZsfCreateServiceOrderResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_CREATE_SERVICE_ORDER">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_CREATE_SERVICE_ORDER"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfCreateServiceOrder">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfCreateServiceOrder"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfCreateServiceOrder"/>
+      <wsdl:output message="tns:ZsfCreateServiceOrderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_CREATE_SERVICE_ORDER" type="tns:ZWAPP_SF_CREATE_SERVICE_ORDER">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_CREATE_SERVICE_ORDER"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfCreateServiceOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_CREATE_SERVICE_ORDER">
+    <wsdl:port name="ZWAPP_SF_CREATE_SERVICE_ORDER" binding="tns:ZWAPP_SF_CREATE_SERVICE_ORDER">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_service_order/100/zwapp_sf_create_service_order/zwapp_sf_create_service_order"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_service_order/100/zwapp_sf_create_service_order/zwapp_sf_create_service_order</con:endpoint></con:endpoints><con:operation id="8fa142c0-7a56-44ff-bdc3-223dba23cfc9" isOneWay="false" action="" name="ZsfCreateServiceOrder" bindingOperationName="ZsfCreateServiceOrder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="770d3ed4-fa59-47ec-829b-dab64df6bc35" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_service_order/100/zwapp_sf_create_service_order/zwapp_sf_create_service_order</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfCreateServiceOrder>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+         <IvContractAccountId>?</IvContractAccountId>\r
+         <IvRequestAmount>?</IvRequestAmount>\r
+         <IvRequestReason>?</IvRequestReason>\r
+         <IvStandardTextKey>?</IvStandardTextKey>\r
+      </urn:ZsfCreateServiceOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_CREATE_SERVICE_ORDER/ZsfCreateServiceOrderRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="390c0f04-263a-4500-be36-80c4e7cbe099" wsaVersion="NONE" name="ZWAPP_SF_MOVE_OUT" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_MOVE_OUT" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6425C13D643B8700E100801BAC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6425C13D643B8700E100801BAC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6425C13D643B8700E100801BAC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_MOVE_OUT">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_MOVE_OUT">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfMoveOutExternal">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char132">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="132"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char34">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="34"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="numeric2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfMoveOutData">
+        <xsd:sequence>
+          <xsd:element name="BusinessPartnerId" type="n0:char10"/>
+          <xsd:element name="ContractAccountId" type="n0:char12"/>
+          <xsd:element name="MoveOutDate" type="n0:date10"/>
+          <xsd:element name="UserComment" type="n0:char132"/>
+          <xsd:element name="Iban" type="n0:char34"/>
+          <xsd:element name="MobileNumber" type="n0:char30"/>
+          <xsd:element name="MoveType" type="tns:numeric2"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="n0:char36"/>
+          <xsd:element name="CorrelationId" type="n0:char36"/>
+          <xsd:element name="OrderId" type="n0:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfMoveOutExternal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsMoveOutData" type="tns:ZsfMoveOutData"/>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfMoveOutExternalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EvErrorDescription" type="n0:char255"/>
+            <xsd:element name="EvIdocNumber" type="n0:char16"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfMoveOutExternal">
+    <wsdl:part name="parameters" element="tns:ZsfMoveOutExternal"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfMoveOutExternalResponse">
+    <wsdl:part name="parameter" element="tns:ZsfMoveOutExternalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_MOVE_OUT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_MOVE_OUT"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfMoveOutExternal">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfMoveOutExternal"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfMoveOutExternal"/>
+      <wsdl:output message="tns:ZsfMoveOutExternalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_MOVE_OUT" type="tns:ZWAPP_SF_MOVE_OUT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_MOVE_OUT"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfMoveOutExternal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_MOVE_OUT">
+    <wsdl:port name="ZWAPP_SF_MOVE_OUT" binding="tns:ZWAPP_SF_MOVE_OUT">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_move_out/100/zwapp_sf_move_out/zwapp_sf_move_out"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_move_out/100/zwapp_sf_move_out/zwapp_sf_move_out</con:endpoint></con:endpoints><con:operation id="969e0fe1-01db-4acc-bf51-b48220334e1a" isOneWay="false" action="" name="ZsfMoveOutExternal" bindingOperationName="ZsfMoveOutExternal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4b443296-bf87-4c48-bc2d-73092d4eacee" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_move_out/100/zwapp_sf_move_out/zwapp_sf_move_out</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfMoveOutExternal>\r
+         <IsMoveOutData>\r
+            <BusinessPartnerId>?</BusinessPartnerId>\r
+            <ContractAccountId>?</ContractAccountId>\r
+            <MoveOutDate>?</MoveOutDate>\r
+            <UserComment>?</UserComment>\r
+            <Iban>?</Iban>\r
+            <MobileNumber>?</MobileNumber>\r
+            <MoveType>?</MoveType>\r
+         </IsMoveOutData>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+      </urn:ZsfMoveOutExternal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_MOVE_OUT/ZsfMoveOutExternalRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="acf5f635-a1cd-4654-8119-44c1224f6d81" wsaVersion="NONE" name="WebserviceforZSF_RETRIEVE_ATTACHMENTS" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}WebserviceforZSF_RETRIEVE_ATTACHMENTS" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6401C36EA7474800E1008009AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6401C36EA7474800E1008009AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6401C36EA7474800E1008009AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_WebserviceforZSF_RETRIEVE_ATTACHMENTS">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_RETRIEVE_ATTACHMENT">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfRetrieveAttachment">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="byte16">
+        <xsd:restriction base="xsd:base64Binary">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="string">
+        <xsd:restriction base="xsd:string"/>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:element name="ZsfRetrieveAttachment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvBrelguid" type="n0:byte16"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfRetrieveAttachmentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EvFileData" type="n0:string"/>
+            <xsd:element name="EvFilename" type="n0:char255"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+            <xsd:element name="EvResultMessage" type="n0:char255"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfRetrieveAttachment">
+    <wsdl:part name="parameters" element="tns:ZsfRetrieveAttachment"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfRetrieveAttachmentResponse">
+    <wsdl:part name="parameter" element="tns:ZsfRetrieveAttachmentResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_RETRIEVE_ATTACHMENT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_RETRIEVE_ATTACHMENT"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfRetrieveAttachment">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfRetrieveAttachment"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfRetrieveAttachment"/>
+      <wsdl:output message="tns:ZsfRetrieveAttachmentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebserviceforZSF_RETRIEVE_ATTACHMENTS" type="tns:ZWAPP_SF_RETRIEVE_ATTACHMENT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_WebserviceforZSF_RETRIEVE_ATTACHMENTS"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfRetrieveAttachment">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebserviceforZSF_RETRIEVE_ATTACHMENTS">
+    <wsdl:port name="WebserviceforZSF_RETRIEVE_ATTACHMENTS" binding="tns:WebserviceforZSF_RETRIEVE_ATTACHMENTS">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_retrieve_attachment/100/webserviceforzsf_retrieve_attach/webserviceforzsf_retrieve_attachments"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_retrieve_attachment/100/webserviceforzsf_retrieve_attach/webserviceforzsf_retrieve_attachments</con:endpoint></con:endpoints><con:operation id="3258f0ed-8667-477d-96b0-421ae433f491" isOneWay="false" action="" name="ZsfRetrieveAttachment" bindingOperationName="ZsfRetrieveAttachment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="01228fbd-f593-436d-9c46-e90a17d7c613" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_retrieve_attachment/100/webserviceforzsf_retrieve_attach/webserviceforzsf_retrieve_attachments</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfRetrieveAttachment>\r
+         <IvBrelguid>cid:1211867707277</IvBrelguid>\r
+      </urn:ZsfRetrieveAttachment>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_RETRIEVE_ATTACHMENT/ZsfRetrieveAttachmentRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3971e986-9657-4407-9963-11216763c8ab" wsaVersion="NONE" name="ZWAPP_SF_RETRIEVE_ALL_ATTACH" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_RETRIEVE_ALL_ATTACH" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6401BE7EA7474800E1008009AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6401BE7EA7474800E1008009AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6401BE7EA7474800E1008009AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_RETRIEVE_ALL_ATTACH">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_RETRIEVE_ALL_ATTACH">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfRetrieveAllAttachments">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="byte16">
+        <xsd:restriction base="xsd:base64Binary">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:time">
+          <xsd:pattern value="[0-9]{2}:[0-9]{2}:[0-9]{2}"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:complexType name="ZsfViewBpCaDocs">
+        <xsd:sequence>
+          <xsd:element name="FileType" type="n0:char3"/>
+          <xsd:element name="DateCreation" type="n0:date10"/>
+          <xsd:element name="TimeCreation" type="n0:time"/>
+          <xsd:element name="FileName" type="n0:char255"/>
+          <xsd:element name="FileTitle" type="n0:char50"/>
+          <xsd:element name="IdStatus" type="n0:char10"/>
+          <xsd:element name="UniqueIdentifier" type="n0:byte16"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfViewBpCaDocsTt">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZsfViewBpCaDocs" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfRetrieveAllAttachments">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvBusinessPartnerId" type="n0:char10"/>
+            <xsd:element name="IvContractAccountId" type="n0:char12"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfRetrieveAllAttachmentsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EtFileList" type="tns:ZsfViewBpCaDocsTt"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+            <xsd:element name="EvResultMessage" type="n0:char255"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfRetrieveAllAttachments">
+    <wsdl:part name="parameters" element="tns:ZsfRetrieveAllAttachments"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfRetrieveAllAttachmentsResponse">
+    <wsdl:part name="parameter" element="tns:ZsfRetrieveAllAttachmentsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_RETRIEVE_ALL_ATTACH">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_RETRIEVE_ALL_ATTACH"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfRetrieveAllAttachments">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfRetrieveAllAttachments"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfRetrieveAllAttachments"/>
+      <wsdl:output message="tns:ZsfRetrieveAllAttachmentsResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_RETRIEVE_ALL_ATTACH" type="tns:ZWAPP_SF_RETRIEVE_ALL_ATTACH">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_RETRIEVE_ALL_ATTACH"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfRetrieveAllAttachments">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_RETRIEVE_ALL_ATTACH">
+    <wsdl:port name="ZWAPP_SF_RETRIEVE_ALL_ATTACH" binding="tns:ZWAPP_SF_RETRIEVE_ALL_ATTACH">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_retrieve_all_attach/100/zwapp_sf_retrieve_all_attach/zwapp_sf_retrieve_all_attach"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_retrieve_all_attach/100/zwapp_sf_retrieve_all_attach/zwapp_sf_retrieve_all_attach</con:endpoint></con:endpoints><con:operation id="ded18c69-5a65-46eb-8946-712d214842dc" isOneWay="false" action="" name="ZsfRetrieveAllAttachments" bindingOperationName="ZsfRetrieveAllAttachments" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca28aea3-a24d-412a-a48a-e9196705bf35" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_retrieve_all_attach/100/zwapp_sf_retrieve_all_attach/zwapp_sf_retrieve_all_attach</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfRetrieveAllAttachments>\r
+         <IvBusinessPartnerId>?</IvBusinessPartnerId>\r
+         <IvContractAccountId>?</IvContractAccountId>\r
+      </urn:ZsfRetrieveAllAttachments>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_RETRIEVE_ALL_ATTACH/ZsfRetrieveAllAttachmentsRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1a694d23-8e07-4892-b624-fd8615f25d79" wsaVersion="NONE" name="ZWAPP_SF_THALIS_REPORT" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_THALIS_REPORT" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63F0769411D91CC0E100803EAC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63F0769411D91CC0E100803EAC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63F0769411D91CC0E100803EAC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_THALIS_REPORT">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_THALIS_REPORT">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfThalisReport">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char70">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="70"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char9">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="9"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:time">
+          <xsd:pattern value="[0-9]{2}:[0-9]{2}:[0-9]{2}"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+          <xsd:pattern value="\d*"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfThalisReportOutputData">
+        <xsd:sequence>
+          <xsd:element name="Interface" type="n0:char10"/>
+          <xsd:element name="Object" type="n0:char20"/>
+          <xsd:element name="Procnum" type="n0:numeric4"/>
+          <xsd:element name="Gsber" type="n0:char4"/>
+          <xsd:element name="Pod" type="n0:char9"/>
+          <xsd:element name="Bedat" type="n0:date10"/>
+          <xsd:element name="Time" type="n0:time"/>
+          <xsd:element name="Usersap" type="n0:char12"/>
+          <xsd:element name="ThalisType" type="n0:char2"/>
+          <xsd:element name="StatusPro" type="n0:numeric2"/>
+          <xsd:element name="StatusCur" type="tns:numeric2"/>
+          <xsd:element name="Docnum" type="n0:numeric16"/>
+          <xsd:element name="Statxt" type="n0:char70"/>
+          <xsd:element name="Upduser" type="n0:char12"/>
+          <xsd:element name="DailyCons" type="n0:numeric8"/>
+          <xsd:element name="NightCons" type="n0:numeric8"/>
+          <xsd:element name="SolarCons" type="n0:numeric8"/>
+          <xsd:element name="SolarProd" type="n0:numeric8"/>
+          <xsd:element name="ZzProtocolNum" type="n0:char12"/>
+          <xsd:element name="ZzProtocolDat" type="n0:date10"/>
+          <xsd:element name="ThalisAa" type="n0:char12"/>
+          <xsd:element name="ThalisIn" type="n0:date10"/>
+          <xsd:element name="ThalisCompl" type="n0:date10"/>
+          <xsd:element name="ThalisErrors" type="n0:char255"/>
+          <xsd:element name="HmEkdoshsEntolhs" type="tns:date10"/>
+          <xsd:element name="ApotelesmaK" type="tns:char2"/>
+          <xsd:element name="MethodosK" type="tns:char2"/>
+          <xsd:element name="MethodosP" type="tns:char50"/>
+          <xsd:element name="HmerEnergeias" type="tns:date10"/>
+          <xsd:element name="EndeixhHmeras" type="tns:char20"/>
+          <xsd:element name="EndeixhNyktas" type="tns:char20"/>
+          <xsd:element name="FlagCompleted" type="tns:char1"/>
+          <xsd:element name="FlagInterrupt" type="tns:char1"/>
+          <xsd:element name="UpdateTime" type="tns:date10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfThalisReportOutDataTt">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZsfThalisReportOutputData" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfThalisReport">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IvObjectType" type="n0:char10"/>
+            <xsd:element name="IvObjectValue" type="n0:char20" minOccurs="0"/>
+            <xsd:element name="IvPodId" type="n0:char50"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfThalisReportResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EtThalisResponse" type="tns:ZsfThalisReportOutDataTt"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+            <xsd:element name="EvResultDescription" type="n0:char255"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfThalisReport">
+    <wsdl:part name="parameters" element="tns:ZsfThalisReport"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfThalisReportResponse">
+    <wsdl:part name="parameter" element="tns:ZsfThalisReportResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_THALIS_REPORT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_THALIS_REPORT"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfThalisReport">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfThalisReport"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfThalisReport"/>
+      <wsdl:output message="tns:ZsfThalisReportResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_THALIS_REPORT" type="tns:ZWAPP_SF_THALIS_REPORT">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_THALIS_REPORT"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfThalisReport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_THALIS_REPORT">
+    <wsdl:port name="ZWAPP_SF_THALIS_REPORT" binding="tns:ZWAPP_SF_THALIS_REPORT">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_thalis_report/100/zwapp_sf_thalis_report/zwapp_sf_thalis_report"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_thalis_report/100/zwapp_sf_thalis_report/zwapp_sf_thalis_report</con:endpoint></con:endpoints><con:operation id="e0a6d79d-2d3a-4b6f-865d-1569b8853c0b" isOneWay="false" action="" name="ZsfThalisReport" bindingOperationName="ZsfThalisReport" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5b58799-f9cd-4bb1-8959-1be01602b404" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_thalis_report/100/zwapp_sf_thalis_report/zwapp_sf_thalis_report</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfThalisReport>\r
+         <IvObjectType>?</IvObjectType>\r
+         <!--Optional:-->\r
+         <IvObjectValue>?</IvObjectValue>\r
+         <IvPodId>?</IvPodId>\r
+      </urn:ZsfThalisReport>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_THALIS_REPORT/ZsfThalisReportRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="ef16050b-fba9-45ca-b3c2-1adc7bbd80b8" wsaVersion="NONE" name="ZSF_UPDATE_BP_PERSONAL_DATA" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZSF_UPDATE_BP_PERSONAL_DATA" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63EA3F7C128B7980E1008021AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63EA3F7C128B7980E1008021AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63EA3F7C128B7980E1008021AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZSF_UPDATE_BP_PERSONAL_DATA">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZSF_UPDATE_BP_PERSONAL_DATA">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfUpdateBpPersonalData">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char241">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="241"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfUpdBpInputData">
+        <xsd:sequence>
+          <xsd:element name="BpCategory" type="n0:char1"/>
+          <xsd:element name="Name" type="n0:char40"/>
+          <xsd:element name="Surname" type="n0:char40"/>
+          <xsd:element name="CompanyName" type="n0:char40"/>
+          <xsd:element name="IdType" type="n0:char6"/>
+          <xsd:element name="IdNumber" type="n0:char60"/>
+          <xsd:element name="TaxNumber" type="n0:char20"/>
+          <xsd:element name="Mobile" type="n0:char30"/>
+          <xsd:element name="Email" type="n0:char241"/>
+          <xsd:element name="HomePhone" type="n0:char30"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfUpdBpResponse">
+        <xsd:sequence>
+          <xsd:element name="BusinessPartner" type="n0:char10"/>
+          <xsd:element name="ResultCode" type="n0:char2"/>
+          <xsd:element name="ResultDescription" type="n0:char255"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GpartKkT">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:char10" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfUpdBpResponseTt">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZsfUpdBpResponse" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfUpdateBpPersonalData">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsUpdBpInputData" type="tns:ZsfUpdBpInputData"/>
+            <xsd:element name="ItBusinessPartner" type="tns:GpartKkT"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfUpdateBpPersonalDataResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EtUpdBpResponse" type="tns:ZsfUpdBpResponseTt"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfUpdateBpPersonalData">
+    <wsdl:part name="parameters" element="tns:ZsfUpdateBpPersonalData"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfUpdateBpPersonalDataResponse">
+    <wsdl:part name="parameter" element="tns:ZsfUpdateBpPersonalDataResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZSF_UPDATE_BP_PERSONAL_DATA">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZSF_UPDATE_BP_PERSONAL_DATA"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfUpdateBpPersonalData">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfUpdateBpPersonalData"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfUpdateBpPersonalData"/>
+      <wsdl:output message="tns:ZsfUpdateBpPersonalDataResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZSF_UPDATE_BP_PERSONAL_DATA" type="tns:ZSF_UPDATE_BP_PERSONAL_DATA">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZSF_UPDATE_BP_PERSONAL_DATA"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfUpdateBpPersonalData">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZSF_UPDATE_BP_PERSONAL_DATA">
+    <wsdl:port name="ZSF_UPDATE_BP_PERSONAL_DATA" binding="tns:ZSF_UPDATE_BP_PERSONAL_DATA">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zsf_update_bp_personal_data/100/zsf_update_bp_personal_data/zsf_update_bp_personal_data"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zsf_update_bp_personal_data/100/zsf_update_bp_personal_data/zsf_update_bp_personal_data</con:endpoint></con:endpoints><con:operation id="d3cd19d0-b4f5-4be8-b472-7a64e43cdf67" isOneWay="false" action="" name="ZsfUpdateBpPersonalData" bindingOperationName="ZsfUpdateBpPersonalData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4e6060ad-aba3-4625-8f9f-630299b7715c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zsf_update_bp_personal_data/100/zsf_update_bp_personal_data/zsf_update_bp_personal_data</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfUpdateBpPersonalData>\r
+         <IsUpdBpInputData>\r
+            <BpCategory>?</BpCategory>\r
+            <Name>?</Name>\r
+            <Surname>?</Surname>\r
+            <CompanyName>?</CompanyName>\r
+            <IdType>?</IdType>\r
+            <IdNumber>?</IdNumber>\r
+            <TaxNumber>?</TaxNumber>\r
+            <Mobile>?</Mobile>\r
+            <Email>?</Email>\r
+            <HomePhone>?</HomePhone>\r
+         </IsUpdBpInputData>\r
+         <ItBusinessPartner>\r
+            <!--Zero or more repetitions:-->\r
+            <item>?</item>\r
+         </ItBusinessPartner>\r
+      </urn:ZsfUpdateBpPersonalData>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZSF_UPDATE_BP_PERSONAL_DATA/ZsfUpdateBpPersonalDataRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="efbeb2f3-1e17-42c5-b592-af8f308d06f8" wsaVersion="NONE" name="ZWAPP_UPD_CONTRACT_PRODUCT_V2" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_UPD_CONTRACT_PRODUCT_V2" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_64225DBDB3576BC0E1008018AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_64225DBDB3576BC0E1008018AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_64225DBDB3576BC0E1008018AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_UPD_CONTRACT_PRODUCT_V2">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_UPD_CONTRACT_PRODUCT_v2">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZwappUpdContractProductV2">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char23">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="23"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="n0:char36"/>
+          <xsd:element name="CorrelationId" type="n0:char36"/>
+          <xsd:element name="OrderId" type="n0:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZwebappResult">
+        <xsd:sequence>
+          <xsd:element name="Code" type="n0:char23"/>
+          <xsd:element name="Message" type="n0:char220"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZwebappResults">
+        <xsd:sequence>
+          <xsd:element name="item" type="tns:ZwebappResult" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZwappUpdContractProductV2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="IvContractAccount" type="n0:char12"/>
+            <xsd:element name="IvProductId" type="n0:char2"/>
+            <xsd:element name="IvRenewal" type="n0:char1"/>
+            <xsd:element name="IvSource" type="n0:char20"/>
+            <xsd:element name="IvStartDate" type="n0:date10"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZwappUpdContractProductV2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EtResults" type="tns:ZwebappResults"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZwappUpdContractProductV2">
+    <wsdl:part name="parameters" element="tns:ZwappUpdContractProductV2"/>
+  </wsdl:message>
+  <wsdl:message name="ZwappUpdContractProductV2Response">
+    <wsdl:part name="parameter" element="tns:ZwappUpdContractProductV2Response"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_UPD_CONTRACT_PRODUCT_v2">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_UPD_CONTRACT_PRODUCT_v2"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZwappUpdContractProductV2">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZwappUpdContractProductV2"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZwappUpdContractProductV2"/>
+      <wsdl:output message="tns:ZwappUpdContractProductV2Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_UPD_CONTRACT_PRODUCT_V2" type="tns:ZWAPP_UPD_CONTRACT_PRODUCT_v2">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_UPD_CONTRACT_PRODUCT_V2"/>
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZwappUpdContractProductV2">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_UPD_CONTRACT_PRODUCT_V2">
+    <wsdl:port name="ZWAPP_UPD_CONTRACT_PRODUCT_V2" binding="tns:ZWAPP_UPD_CONTRACT_PRODUCT_V2">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_contract_product_v2/100/zwapp_upd_contract_product_v2/zwapp_upd_contract_product_v2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_contract_product_v2/100/zwapp_upd_contract_product_v2/zwapp_upd_contract_product_v2</con:endpoint></con:endpoints><con:operation id="40f31554-455e-4e9d-96cb-674823bb6d33" isOneWay="false" action="" name="ZwappUpdContractProductV2" bindingOperationName="ZwappUpdContractProductV2" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="703d4c7f-d86b-42eb-a233-32dc08764243" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_contract_product_v2/100/zwapp_upd_contract_product_v2/zwapp_upd_contract_product_v2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZwappUpdContractProductV2>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+         <IvContractAccount>?</IvContractAccount>\r
+         <IvProductId>?</IvProductId>\r
+         <IvRenewal>?</IvRenewal>\r
+         <IvSource>?</IvSource>\r
+         <IvStartDate>?</IvStartDate>\r
+      </urn:ZwappUpdContractProductV2>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_UPD_CONTRACT_PRODUCT_v2/ZwappUpdContractProductV2Request"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="26f942c5-c767-4203-91ba-dce3297f83cc" wsaVersion="NONE" name="ZWAPP_SF_CREATE_PREMISE" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_SF_CREATE_PREMISE" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6393ECEB1E2B4900E10080160A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6393ECEB1E2B4900E10080160A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_6393ECEB1E2B4900E10080160A0A3965/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_SF_CREATE_PREMISE">
+    <wsaw:UsingAddressing xmlns:wsaw="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_ZWAPP_SF_CREATE_PREMISE">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfCreatePremiseExternal">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char50">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="50"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZsfPremiseInputData">
+        <xsd:sequence>
+          <xsd:element name="BusinessPartnerId" type="n0:char10"/>
+          <xsd:element name="ConnectionObjectId" type="n0:char30"/>
+          <xsd:element name="PodId" type="n0:char50"/>
+          <xsd:element name="Floor" type="n0:char10"/>
+          <xsd:element name="Door" type="n0:char10"/>
+          <xsd:element name="ExpirationDate" type="tns:char8"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="tns:char36"/>
+          <xsd:element name="CorrelationId" type="tns:char36"/>
+          <xsd:element name="OrderId" type="tns:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfCreatePremiseExternal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsPremiseData" type="tns:ZsfPremiseInputData"/>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfCreatePremiseExternalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EvErrorDescription" type="n0:char255"/>
+            <xsd:element name="EvIdocNumber" type="n0:char16"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfCreatePremiseExternal">
+    <wsdl:part name="parameters" element="tns:ZsfCreatePremiseExternal"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfCreatePremiseExternalResponse">
+    <wsdl:part name="parameter" element="tns:ZsfCreatePremiseExternalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="ZWAPP_SF_CREATE_PREMISE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_ZWAPP_SF_CREATE_PREMISE"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfCreatePremiseExternal">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfCreatePremiseExternal"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfCreatePremiseExternal"/>
+      <wsdl:output message="tns:ZsfCreatePremiseExternalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_SF_CREATE_PREMISE" type="tns:ZWAPP_SF_CREATE_PREMISE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_SF_CREATE_PREMISE"/>
+    </wsp:Policy>
+    <wsa:EndpointReference xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <wsa:ReferenceParameters/>
+    </wsa:EndpointReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfCreatePremiseExternal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_SF_CREATE_PREMISE">
+    <wsdl:port name="ZWAPP_SF_CREATE_PREMISE" binding="tns:ZWAPP_SF_CREATE_PREMISE">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_premise/100/zwapp_sf_create_premise/zwapp_sf_create_premise"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_premise/100/zwapp_sf_create_premise/zwapp_sf_create_premise</con:endpoint></con:endpoints><con:operation id="285d213b-3bfd-4469-807e-1763acdef592" isOneWay="false" action="" name="ZsfCreatePremiseExternal" bindingOperationName="ZsfCreatePremiseExternal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="16df3e8c-586b-45e8-a81b-459a97292f0c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_sf_create_premise/100/zwapp_sf_create_premise/zwapp_sf_create_premise</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfCreatePremiseExternal>\r
+         <IsPremiseData>\r
+            <BusinessPartnerId>?</BusinessPartnerId>\r
+            <ConnectionObjectId>?</ConnectionObjectId>\r
+            <PodId>?</PodId>\r
+            <Floor>?</Floor>\r
+            <Door>?</Door>\r
+            <ExpirationDate>?</ExpirationDate>\r
+         </IsPremiseData>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+      </urn:ZsfCreatePremiseExternal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/ZWAPP_SF_CREATE_PREMISE/ZsfCreatePremiseExternalRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="165a2aff-b171-4771-9a3d-2a41f3d00d3c" wsaVersion="NONE" name="ZWAPP_UPD_BILLING_ADDRESS" type="wsdl" bindingName="{urn:sap-com:document:sap:soap:functions:mc-style}ZWAPP_UPD_BILLING_ADDRESS" soapVersion="1_1" anonymous="optional" definition="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63DC09E1E71A3F80E1008005AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63DC09E1E71A3F80E1008005AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100"><con:part><con:url>http://sapr3q.dei.local:8002/sap/bc/srt/wsdl/bndg_63DC09E1E71A3F80E1008005AC1D220C/wsdl11/allinone/ws_policy/document?sap-client=100</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:n1="urn:sap-com:document:sap:rfc:functions">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl"/>
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true"/>
+  <wsp:Policy wsu:Id="BN_ZWAPP_UPD_BILLING_ADDRESS">
+    <wsaw:UsingAddressing xmlns:wsaw="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" wsp:Optional="true" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/"/>
+    <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+    <wsp:ExactlyOne xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication/>
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_zwapp_upd_billing_address">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration wsp:Optional="true" xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/">
+      <sapcentraladmin:BusinessApplicationID>59DF761FE0CF0B90E10080000A0A3965</sapcentraladmin:BusinessApplicationID>
+    </sapcentraladmin:CentralAdministration>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_ZsfUpdBillAddressExternal">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:tns="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char255">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="255"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char36">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="36"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char60">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="60"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:n0="urn:sap-com:document:sap:rfc:functions">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions"/>
+      <xsd:complexType name="ZsfBillingAddressData">
+        <xsd:sequence>
+          <xsd:element name="BusinessPartnerId" type="n0:char10"/>
+          <xsd:element name="ContractAccountId" type="n0:char12"/>
+          <xsd:element name="Street" type="n0:char60"/>
+          <xsd:element name="StreetNumber" type="n0:char10"/>
+          <xsd:element name="City" type="n0:char40"/>
+          <xsd:element name="Region" type="n0:char3"/>
+          <xsd:element name="Country" type="n0:char3"/>
+          <xsd:element name="PostalCode" type="n0:char10"/>
+          <xsd:element name="PoBox" type="n0:char10"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZsfMiddlewareTrackingData">
+        <xsd:sequence>
+          <xsd:element name="TransactionId" type="n0:char36"/>
+          <xsd:element name="CorrelationId" type="n0:char36"/>
+          <xsd:element name="OrderId" type="n0:char18"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZsfUpdBillAddressExternal">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IsBillingAddressData" type="tns:ZsfBillingAddressData"/>
+            <xsd:element name="IsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZsfUpdBillAddressExternalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EsTrackingData" type="tns:ZsfMiddlewareTrackingData"/>
+            <xsd:element name="EvErrorDescription" type="n0:char255"/>
+            <xsd:element name="EvIdocNumber" type="n0:char16"/>
+            <xsd:element name="EvResultCode" type="n0:char2"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZsfUpdBillAddressExternal">
+    <wsdl:part name="parameters" element="tns:ZsfUpdBillAddressExternal"/>
+  </wsdl:message>
+  <wsdl:message name="ZsfUpdBillAddressExternalResponse">
+    <wsdl:part name="parameter" element="tns:ZsfUpdBillAddressExternalResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="zwapp_upd_billing_address">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_zwapp_upd_billing_address"/>
+    </wsp:Policy>
+    <wsdl:operation name="ZsfUpdBillAddressExternal">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_ZsfUpdBillAddressExternal"/>
+      </wsp:Policy>
+      <wsdl:input message="tns:ZsfUpdBillAddressExternal"/>
+      <wsdl:output message="tns:ZsfUpdBillAddressExternalResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWAPP_UPD_BILLING_ADDRESS" type="tns:zwapp_upd_billing_address">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_ZWAPP_UPD_BILLING_ADDRESS"/>
+    </wsp:Policy>
+    <wsa:EndpointReference xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <wsa:ReferenceParameters/>
+    </wsa:EndpointReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="ZsfUpdBillAddressExternal">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWAPP_UPD_BILLING_ADDRESS">
+    <wsdl:port name="ZWAPP_UPD_BILLING_ADDRESS" binding="tns:ZWAPP_UPD_BILLING_ADDRESS">
+      <soap:address location="https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_billing_address/100/zwapp_upd_billing_address/zwapp_upd_billing_address"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_billing_address/100/zwapp_upd_billing_address/zwapp_upd_billing_address</con:endpoint></con:endpoints><con:operation id="b862ccf4-b77f-46ce-a18c-69930f0febb3" isOneWay="false" action="" name="ZsfUpdBillAddressExternal" bindingOperationName="ZsfUpdBillAddressExternal" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="421e27f0-031f-468a-9682-9afaf76a9b2a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://sapr3q.dei.local:9000/sap/bc/srt/rfc/sap/zwapp_upd_billing_address/100/zwapp_upd_billing_address/zwapp_upd_billing_address</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:ZsfUpdBillAddressExternal>\r
+         <IsBillingAddressData>\r
+            <BusinessPartnerId>?</BusinessPartnerId>\r
+            <ContractAccountId>?</ContractAccountId>\r
+            <Street>?</Street>\r
+            <StreetNumber>?</StreetNumber>\r
+            <City>?</City>\r
+            <Region>?</Region>\r
+            <Country>?</Country>\r
+            <PostalCode>?</PostalCode>\r
+            <PoBox>?</PoBox>\r
+         </IsBillingAddressData>\r
+         <IsTrackingData>\r
+            <TransactionId>?</TransactionId>\r
+            <CorrelationId>?</CorrelationId>\r
+            <OrderId>?</OrderId>\r
+         </IsTrackingData>\r
+      </urn:ZsfUpdBillAddressExternal>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sap-com:document:sap:soap:functions:mc-style/zwapp_upd_billing_address/ZsfUpdBillAddressExternalRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
